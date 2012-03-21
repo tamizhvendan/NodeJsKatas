@@ -55,7 +55,7 @@ http.createServer(function(request, response){
         });
     }
         
-}).listen(2000);
+}).listen(process.env.PORT);
 
 console.log("Listening @ localhost:2000");
 
