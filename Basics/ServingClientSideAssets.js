@@ -43,8 +43,6 @@ http.createServer(function(request, response){
         directoryName = path.dirname(requestUrl).substring(1), // Removing the prefix '/'
         localPath = path.join(__dirname, sitePublicFolderName, directoryName, fileName);
     
-    console.log(localPath);
-
     if(extensions[fileExtension]){
         path.exists(localPath, function(isFileExist){
             if(isFileExist) {
@@ -56,6 +54,3 @@ http.createServer(function(request, response){
     }
         
 }).listen(process.env.PORT);
-
-console.log("Listening @ localhost:2000");
-
