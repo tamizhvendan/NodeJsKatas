@@ -8,6 +8,10 @@ http.createServer(function(req, res){
         if(exists){
             fs.readFile(indexFilePath, function(err, contents){
                 if(!err){
+                    res.writeHead(200, { 
+                        "Content-Type" : "text/html",
+                        "Content-Length" : contents.length 
+                    });
                     res.end(contents);
                 }else{
                     res.writeHead(500);
@@ -19,6 +23,4 @@ http.createServer(function(req, res){
             res.end();
         }
     });
-}).listen(2000);
-
-console.log("Listening @ locahost:2000");
+}).listen(process.env.PORT || 2000);
