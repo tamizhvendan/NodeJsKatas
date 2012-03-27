@@ -8,15 +8,10 @@ function start(route, handle){
         
         var pathname = url.parse(request.url).pathname;
         
-        route(handle, pathname);
-        
-        
-        response.writeHead(200, { "Content-Type" : "text/html" });
-        response.end("Hello World from Custom Module in node.js");
+        route(handle, pathname, response);        
     }
 
-    http.createServer(handleRequest).listen(port);
-    console.log("Server Started!");
+    http.createServer(handleRequest).listen(port);    
 }
 
 exports.start = start;
