@@ -1,4 +1,4 @@
-var helloWorld = require('../helloworld'),
+var helloWorld = require('../helloWorld'),
     should = require('should');
 
 describe('Hello World', function() {
