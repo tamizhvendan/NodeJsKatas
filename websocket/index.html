@@ -1,0 +1,27 @@
+<script src='http://code.jquery.com/jquery-1.7.2.min.js' type="text/javascript" charset="utf-8"></script>
+<script src='/socket.io/socket.io.js'> </script>
+<h1>Hello from WebSocket</h1>
+<input type='text' id='clientMsg'> </input>
+<button>Send to Server </button>
+<ul id='serverMsg'> </ul>
+<script type="text/javascript" language="javascript" charset="utf-8">
+    $(function(){
+        var socket = io.connect();
+
+        socket.on('connect', function(){
+            console.log('connected to the server');    
+        });
+
+        socket.on('message', function (serverMsg){
+            $("#serverMsg").append("<li>"+ serverMsg +"</li>");
+        });
+
+        $('button').on('click', sendMsgToServer);
+
+        function sendMsgToServer(){
+            var clientMsg = $('#clientMsg').val();
+            socket.emit('clientMsg', clientMsg);
+        };
+
+    });
+</script>
