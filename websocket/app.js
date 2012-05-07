@@ -13,7 +13,7 @@ var app = http.createServer(handleRequest);
 
 var io = socketIo.listen(app);
 
-app.listen(2000);
+app.listen(process.env.PORT || 2000);
 
 io.sockets.on('connection', function(socket){
 
