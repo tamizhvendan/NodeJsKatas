@@ -14,9 +14,9 @@ module.exports.all = products;
 
 module.exports.find = function(id) {
    
-    var products = products.filter(function(product) {
+    var product = products.filter(function(product) {
         return product.id === parseInt(id, 10);
     });
 
-    return products ? product[0] : {};
+    return product ? product[0] : {};
 };
