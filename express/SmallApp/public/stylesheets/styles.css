@@ -1,0 +1,12 @@
+h1 {
+    background-color : black;
+    color : white
+}
+
+footer{
+    position : absolute;
+    bottom : 0px;
+    font-size : 0.8em;
+}
+
+
